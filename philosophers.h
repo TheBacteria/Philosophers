@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzouine <mzouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 15:06:13 by mzouine           #+#    #+#             */
-/*   Updated: 2024/04/20 15:06:33 by mzouine          ###   ########.fr       */
+/*   Created: 2024/04/19 16:09:32 by mzouine           #+#    #+#             */
+/*   Updated: 2024/04/20 15:05:59 by mzouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#ifndef PHILOSOPHERS_H
+# define PHILOSOPHERS_H
 
-int main(int ac, char *av)
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+
+#endif
+
+typedef struct s_list
 {
-    
-}
+	int				content;
+	char			*ins;
+	struct s_list	*next;
+}					t_list;
+
+char	*get_next_line(int fd);
+
+
+#endif
