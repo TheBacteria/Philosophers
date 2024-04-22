@@ -6,7 +6,7 @@
 /*   By: mzouine <mzouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 15:06:13 by mzouine           #+#    #+#             */
-/*   Updated: 2024/04/22 16:34:42 by mzouine          ###   ########.fr       */
+/*   Updated: 2024/04/22 17:01:30 by mzouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	main(int ac, char **av)
 {
-	t_philo	data;
+	t_data	data;
+	t_philo	*philo;
+	
 	
 	if (ac != 5 && ac != 6)
 	{
@@ -24,7 +26,10 @@ int	main(int ac, char **av)
 	}
 	if(mz_parser(ac, av, &data) == -1)
 		return (-1);
-	mz_philo(ac, &data);
+	if (mz_philo(&data, philo) == -1)
+	{
+		free(philo);
+	}
 	//////////////////////////////////////////////////////////////////////////////////////////
 
 	printf("Number of philosophers: %i\n", data.philos);
@@ -36,7 +41,6 @@ int	main(int ac, char **av)
 
 
 	//////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 	return (0);
