@@ -6,7 +6,7 @@
 /*   By: mzouine <mzouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 16:58:04 by mzouine           #+#    #+#             */
-/*   Updated: 2024/04/22 17:10:06 by mzouine          ###   ########.fr       */
+/*   Updated: 2024/04/22 18:59:28 by mzouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	*mz_routine(void *arg)
 {
-	printf("aaaaaaa\n");
+	
 	return(NULL);
 }

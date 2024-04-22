@@ -6,7 +6,7 @@
 /*   By: mzouine <mzouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 15:06:13 by mzouine           #+#    #+#             */
-/*   Updated: 2024/04/22 17:01:30 by mzouine          ###   ########.fr       */
+/*   Updated: 2024/04/22 18:52:59 by mzouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int ac, char **av)
 	}
 	if(mz_parser(ac, av, &data) == -1)
 		return (-1);
+	philo = malloc(sizeof(t_philo) * data.philos);
 	if (mz_philo(&data, philo) == -1)
 	{
 		free(philo);
