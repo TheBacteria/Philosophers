@@ -1,1 +1,1 @@
-cc *.c -o philo
+make && make clean
