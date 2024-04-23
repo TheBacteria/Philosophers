@@ -6,7 +6,7 @@
 /*   By: mzouine <mzouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:09:32 by mzouine           #+#    #+#             */
-/*   Updated: 2024/04/22 21:32:45 by mzouine          ###   ########.fr       */
+/*   Updated: 2024/04/23 21:17:21 by mzouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,18 @@ typedef struct s_data
 	int				t_sleep;
 	int				n_to_eat;
 	int				ac;
+	int				death;
+	pthread_mutex_t	death_mutex;
 }					t_data;
 
 typedef struct s_philo
 {
-	int			index;
-	pthread_t	slave;
-	int			last_meal;
-	int			n_of_meals;
-	int			death;
+	int				index;
+	pthread_t		slave;
+	pthread_mutex_t	r_fork;
+	pthread_mutex_t	printer;
+	int				last_meal;
+	int				n_of_meals;
 }					t_philo;
 
 void	ft_putstr_fd(char *s, int fd);
